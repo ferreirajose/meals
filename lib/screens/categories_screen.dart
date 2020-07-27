@@ -24,11 +24,14 @@ class CategoriesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Platform.isIOS
-        ? CupertinoPageScaffold(child: bodyPage)
+        ? CupertinoPageScaffold(
+            child: bodyPage,
+          )
         : Scaffold(
             appBar: AppBar(
               title: Text('Vamos Cozinhar'),
             ),
-            body: bodyPage);
+            body: bodyPage,
+          );
   }
 }
