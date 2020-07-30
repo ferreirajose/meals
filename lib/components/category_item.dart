@@ -1,34 +1,21 @@
-import 'dart:io';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 import 'package:meals/models/catergory.dart';
-import 'package:meals/screens/categories_meals_screen.dart';
+import 'package:meals/utils/app_routes.dart';
 
 class CategoryItem extends StatelessWidget {
   final Category category;
 
   CategoryItem(this.category);
 
-  // final router = Platform.isIOS
-  //     ? CupertinoPageRoute(builder: (_) {
-  //         return CategoriesMealsScreen(this.category);
-  //       })
-  //     : MaterialPageRoute(builder: (_) {
-  //         return CategoriesMealsScreen(this.category);
-  //       });
-
   void _selectCategory(BuildContext context) {
-    /**
-     * @TODO
-     * Cannot install a MaterialPageRoute<dynamic> after disposing it.
-     * Esse erro acima pode ocorrer quando se navegar para outras telas, 
-     * o problemas acontece depois de um certo tempo
-     *  */
-
-    Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-      return CategoriesMealsScreen(this.category);
-    }));
+    // passando a categorias por parametro na rota, utilizando rotas nomeadas
+    Navigator.of(context).pushNamed(
+      AppRouter.CATEGORIES_MEALS,
+      arguments:
+          category, // pode ser passar qualquer tipos de parametros, Lista, Object, Tipo Primitivos
+    );
   }
 
   @override

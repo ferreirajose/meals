@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'package:meals/screens/categories_screen.dart';
+import 'screens/categories_meals_screen.dart';
+import 'package:meals/utils/app_routes.dart';
 
 void main() => runApp(MyApp());
 
@@ -18,6 +21,11 @@ class MyApp extends StatelessWidget {
               headline1: TextStyle(fontSize: 20, fontFamily: 'RobotoCondensed'),
             ),
       ),
+      routes: {
+        // O / e assim como a propriedade home: CategoriesScreen(), initialRoute pode ser utilizado para carregar a tela inicial da aplicação
+        AppRouter.HOME: (_) => CategoriesScreen(),
+        AppRouter.CATEGORIES_MEALS: (_) => CategoriesMealsScreen(),
+      },
     );
   }
 }
