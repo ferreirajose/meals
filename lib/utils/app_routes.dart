@@ -5,4 +5,5 @@ class AppRouter {
   */
   static const HOME = '';
   static const CATEGORIES_MEALS = '/catergories-meals';
+  static const MEALS_DETAIL = '/meals-detail';
 }
