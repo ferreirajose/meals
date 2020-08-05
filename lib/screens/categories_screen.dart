@@ -28,9 +28,6 @@ class CategoriesScreen extends StatelessWidget {
             child: bodyPage,
           )
         : Scaffold(
-            appBar: AppBar(
-              title: Text('Vamos Cozinhar'),
-            ),
             body: bodyPage,
           );
   }
