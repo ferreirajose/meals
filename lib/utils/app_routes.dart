@@ -6,4 +6,5 @@ class AppRouter {
   static const HOME = '/'; // se estiver utilizar tabs adicione a barra
   static const CATEGORIES_MEALS = '/catergories-meals';
   static const MEALS_DETAIL = '/meals-detail';
+  static const SETTINGS = '/settings';
 }

@@ -8,10 +8,11 @@ class MealItem extends StatelessWidget {
 
   void _selectMeal(BuildContext context) {
     // passando obj meal como parametro da rota nomeada
-    Navigator.of(context).pushNamed(
-      AppRouter.MEALS_DETAIL,
-      arguments: meal,
-    );
+    Navigator.of(context)
+        .pushNamed(AppRouter.MEALS_DETAIL, arguments: meal)
+        .then((value) => (value == null)
+            ? print('Sem resultado')
+            : print('O nome da refeição é $value'));
   }
 
   @override
