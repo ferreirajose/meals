@@ -4,10 +4,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:meals/components/meal_item.dart';
 import 'package:meals/models/catergory.dart';
-
-import '../data/dummy_data.dart';
+import 'package:meals/models/meal.dart';
 
 class CategoriesMealsScreen extends StatelessWidget {
+  final List<Meal> meals;
+
+  const CategoriesMealsScreen(this.meals);
+
   @override
   Widget build(BuildContext context) {
     // pegando dados da categorias atraves das rotas
@@ -19,9 +22,8 @@ class CategoriesMealsScreen extends StatelessWidget {
      * OBS: where é semelhante ao filter do JS
      * */
 
-    final categoryMeals = DUMMY_MEALS
-        .where((meal) => meal.categories.contains(category.id))
-        .toList();
+    final categoryMeals =
+        meals.where((meal) => meal.categories.contains(category.id)).toList();
 
     return Platform.isIOS
         ? CupertinoPageScaffold(
